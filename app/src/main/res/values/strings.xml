@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CalculatorTime</string>
+    <string name="textViewTitleName">Калькулятор времени</string>
+    <string name="buttonSum">+</string>
+    <string name="buttonDif">-</string>
+    <string name="textViewResult">Результат</string>
+</resources>

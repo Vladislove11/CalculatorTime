@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/TitleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewTitleName"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1"/>
+
+    <LinearLayout
+        android:id="@+id/linerLayoutInputOperand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TitleTV"
+        app:layout_constraintVertical_bias="0.1"
+        >
+        <EditText
+            android:id="@+id/FirstOperantET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8pt"
+            android:layout_marginRight="8pt"
+            android:layout_weight="1.0"
+            android:textSize="22sp"
+            />
+        <EditText
+            android:id="@+id/SecondOperantET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8pt"
+            android:layout_marginRight="8pt"
+            android:layout_weight="1.0"
+            android:textSize="22sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linerLayoutButtonOperation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linerLayoutInputOperand"
+        app:layout_constraintVertical_bias="0.1"
+        >
+        <Button
+            android:id="@+id/ButtonSumBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/buttonSum"
+            android:textSize="26sp"/>
+        <Button
+            android:id="@+id/ButtonDifBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/buttonDif"
+            android:textSize="28sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ResultTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewResult"
+        android:textSize="28sp"
+        android:textColor="@color/red"
+        android:gravity="center"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linerLayoutButtonOperation"
+        app:layout_constraintVertical_bias="0.1"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

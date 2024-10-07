@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         hour = timeSec / 3600
 
-        if (timeSec % 60 > 0 ){
+        if (timeSec % 3600 > 0 ){
             minute = (timeSec - 3600 * hour)/60
         }
 

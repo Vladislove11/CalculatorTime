@@ -40,6 +40,8 @@
             android:layout_marginRight="8pt"
             android:layout_weight="1.0"
             android:textSize="22sp"
+            android:textColor="@color/black"
+            android:background="@color/white"
             />
         <EditText
             android:id="@+id/SecondOperantET"
@@ -49,6 +51,8 @@
             android:layout_marginRight="8pt"
             android:layout_weight="1.0"
             android:textSize="22sp"
+            android:textColor="@color/black"
+            android:background="@color/white"
             />
     </LinearLayout>
 
@@ -69,14 +73,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/buttonSum"
-            android:textSize="26sp"/>
+            android:textSize="26sp"
+            android:onClick="onClick"/>
         <Button
             android:id="@+id/ButtonDifBTN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/buttonDif"
-            android:textSize="28sp"/>
+            android:textSize="28sp"
+            android:onClick="onClick"/>
     </LinearLayout>
 
     <TextView

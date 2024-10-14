@@ -4,4 +4,6 @@
     <string name="buttonSum">+</string>
     <string name="buttonDif">-</string>
     <string name="textViewResult">Результат</string>
+    <string name="reset">Reset</string>
+    <string name="exit">Exit</string>
 </resources>

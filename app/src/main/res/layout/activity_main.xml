@@ -6,19 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/TitleTV"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMain"
+        android:background="@color/mediumPurper"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/textViewTitleName"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10pt"
+        tools:ignore="MissingConstraints"
+
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1"/>
+        />
 
     <LinearLayout
         android:id="@+id/linerLayoutInputOperand"
@@ -29,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/TitleTV"
+        app:layout_constraintTop_toBottomOf="@id/toolbarMain"
         app:layout_constraintVertical_bias="0.1"
         >
         <EditText
@@ -73,16 +70,21 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/buttonSum"
+            android:background="@color/colorButton"
             android:textSize="26sp"
-            android:onClick="onClick"/>
+            tools:ignore="MissingConstraints"
+            android:onClick="onClick"
+            app:backgroundTint = "@null"/>
         <Button
             android:id="@+id/ButtonDifBTN"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/buttonDif"
-            android:textSize="28sp"
-            android:onClick="onClick"/>
+            android:background="@color/colorButton"
+            android:textSize="26sp"
+            android:onClick="onClick"
+            app:backgroundTint = "@null"/>
     </LinearLayout>
 
     <TextView
@@ -91,7 +93,7 @@
         android:layout_height="wrap_content"
         android:text="@string/textViewResult"
         android:textSize="28sp"
-        android:textColor="@color/red"
+        android:textColor="@color/colorTextResult"
         android:gravity="center"
 
         app:layout_constraintStart_toStartOf="parent"

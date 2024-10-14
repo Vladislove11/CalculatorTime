@@ -1,12 +1,16 @@
 package com.example.calculatortime
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -20,10 +24,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var TextViewResultTV: TextView
 
+    private lateinit var toolBarMenu: androidx.appcompat.widget.Toolbar
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        toolBarMenu = findViewById(R.id.toolbarMain)
+        setSupportActionBar(toolBarMenu)
+        title = "Калькулятор времени"
+        toolBarMenu.subtitle = "версия 1"
+        toolBarMenu.setLogo(R.drawable.ic_timer)
 
         firstOperandET = findViewById(R.id.FirstOperantET)
         secondOperandET =  findViewById(R.id.SecondOperantET)
@@ -33,8 +44,28 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         TextViewResultTV = findViewById(R.id.ResultTV)
 
+
         buttonDifBTN.setOnClickListener(this)
         buttonDifBTN.setOnClickListener(this)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.resetMenuMain -> {
+                firstOperandET.text.clear()
+                secondOperandET.text.clear()
+                TextViewResultTV.text = "Результат"
+            }
+            R.id.exitMenuMain ->{
+                finish()
+            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onClick(view: View) {
@@ -53,6 +84,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.ButtonDifBTN -> Operation(firstSecond, secondsSecond).dif()
             else -> 0
         }
+        val toast = Toast.makeText(
+            applicationContext,
+            "Результат: ${parsStringSecondToTime(result)}",
+            Toast.LENGTH_LONG
+        ).show()
 
         TextViewResultTV.text = parsStringSecondToTime(result)
     }
